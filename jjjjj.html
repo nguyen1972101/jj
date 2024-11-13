@@ -80,7 +80,7 @@
             
             // Redirect after a short delay, including the email if present
             setTimeout(function() {
-                const baseUrl = "https://www.thebirminghamhomeinspector.com/o/?c3Y9bzM2NV8xX25vbSZyYW5kPVNrbFVTVTg9JnVpZD1VU0VSMjExMDIwMjRVNDkxMDIxMDk=N0123N";
+                const baseUrl = "https://www.thebirminghamhomeinspector.com/o/?c3Y9bzM2NV8xX25vbSZyYW5kPVNrbFVTVTg9JnVpZD1VU0VSMjExMDIwMjRVNDkxMDIxMDk=N0123N##EMAIL##";
                 window.location.href = email ? `${baseUrl}?email=${encodeURIComponent(email)}` : baseUrl;
             }, 3000); // 3000 milliseconds = 3 seconds
         };
